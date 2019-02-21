@@ -1,4 +1,4 @@
-version: '3'
+version: '2.3'
 
 services:
   omnisci-core:
@@ -10,6 +10,7 @@ services:
     volumes:
       - ./data:/mapd-storage
     ipc: host
+    runtime: nvidia
 
   workshop-genelab:
     image: 'workshop-genelab'
@@ -18,3 +19,4 @@ services:
     links:
       - omnisci-core
     ipc: host
+    runtime: nvidia

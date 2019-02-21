@@ -19,6 +19,7 @@ WORKDIR /dli
 ENV DIGITS_URL_PREFIX=/digits
 ENV DIGITS_JOBS_DIR=/dli/data/digits
 ENV DIGITS_LOGFILE_FILENAME=$DIGITS_JOBS_DIR/digits.log
+ENV LD_LIBRARY_PATH=/usr/local/cuda-10.0/compat/
 
 # Set startup
 ENTRYPOINT utils/start_workshop_examples.sh
