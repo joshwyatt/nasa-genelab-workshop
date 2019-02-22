@@ -19,9 +19,10 @@ WORKDIR /dli
 ENV DIGITS_URL_PREFIX=/digits
 ENV DIGITS_JOBS_DIR=/dli/data/digits
 ENV DIGITS_LOGFILE_FILENAME=$DIGITS_JOBS_DIR/digits.log
+ENV LD_LIBRARY_PATH=/usr/local/cuda-10.0/compat/
 
 # Set startup
-ENTRYPOINT $WORKDIR/startup_script.sh
+ENTRYPOINT utils/start_workshop_examples.sh
 
 # Install assessment harness services & Jupyter
 RUN apt-get update && apt-get install --upgrade -y --no-install-recommends \
